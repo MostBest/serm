@@ -1,0 +1,149 @@
+button,
+input,
+optgroup,
+select,
+textarea
+	box-sizing: border-box
+	width: 100%
+	font-size: 1.5rem
+	font-weight: 300
+
+.form-container
+	position: relative
+	max-width: $form-width // что делать если 2 формы и нужно две разные ширины
+	margin: 20px auto
+	padding-left: 20px
+	padding-right: 20px
+	padding-bottom: 18px
+	border: 1px solid #bdbfc1 // удалить
+	border-radius: 3px // удалить
+
+.form-container-title
+	font-size: .8rem
+	color: #999
+	text-transform: uppercase
+	padding-bottom: 10px
+	text-align: $form-title-posititon 
+	span
+		background: #fff
+		padding: 0 10px
+		position: relative
+		top: -8px
+
+.form-row-x
+	flex-basis: 100%
+	display: flex
+	flex-flow: row wrap
+
+.form-cell
+	flex-basis: 100%
+	min-height: 0px
+	min-width: 0px
+
+.input-group
+	margin-bottom: 18px
+	position: relative
+	width: 100%
+
+.input-title 
+	padding: 0 10px
+	position: absolute
+	font-size: .8rem 
+	font-family: $font-light
+	color: #999
+	text-transform: lowercase
+	top: -8px
+	left: 10px
+	background: #fff
+
+.input-field 
+	border: 1px solid #bdbfc1 // сделать переменной?
+	padding: 19px 20px // сделать зависимыми от размера экрана
+	color: #1f2530 !important
+	box-shadow: 0 3px 0 transparent
+	transition: background .3s, box-shadow .3s, border-color .3s
+
+.input-field[name="password"]
+	padding-right: 70px
+
+.form-row-x-between
+	width: 100%
+	display: flex
+	justify-content: space-between
+	align-items: center // скорее всего нужно вынести в отдельный класс
+
+.error 
+	border-bottom-color: rgba(232,125,125, .42) !important
+
+.input-field:-webkit-autofill 
+	-webkit-box-shadow: inset 0 0 0 50px #fff !important
+	-webkit-text-fill-color: #1f2530
+
+.login-error,
+.password-error 
+	font-size: 11px
+	line-height: 13px
+	color: #efa2a2
+	position: absolute
+	bottom: 4px
+	right: 10px
+
+.input-field:focus 
+	border-bottom-color: #05a
+
+.form-message
+	width: 100%
+	text-align: center
+	margin-top: -8px
+	padding-bottom: 10px
+	color: #fff
+	font-size: 12px
+	transition: color .3s
+	&.error
+		color: #efa2a2
+
+.remove-password 
+	color: #0055aa
+
+.show-password.disabled
+	display: none
+
+.show-password
+	padding: 16px
+	background: none
+	border: none
+	border-left: 1px solid #bdbfc1
+	position: absolute
+	top: 0
+	right: 0
+	height: 100%
+	width: 64px
+	display: flex
+	align-items: center
+	justify-content: center
+	cursor: pointer
+
+.i-eye
+	fill: #444
+	width: 32px
+
+.input-submit.disabled
+	opacity: .2
+	cursor: auto
+	&:hover
+		background-color: #004080 !important
+
+.input-submit
+	border: none
+	color: #fff
+	padding: .9rem 2.8rem
+	background-color: #004080
+	max-width: 150px
+	text-align: center
+	cursor: pointer
+	transition: .3s
+	font-size: 1.2rem
+	text-transform: uppercase
+	outline:none
+	&:hover 
+		background-color: #05a
