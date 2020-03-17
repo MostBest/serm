@@ -21,20 +21,74 @@ body
 *::after
 	box-sizing: inherit
 
+h1
+	font-size: 3rem
+	font-weight: 600
+
 $grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px )
 $container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px )
 $grid-columns: 12
 $grid-gutter-width: 30px
 
 header
-	height: 55px
-	border-bottom: 1px solid greey
+	background: url('../img/header/header-bg.jpg') center no-repeat
+	height: 860px
+
+nav
+	display: flex
+	justify-content: space-around
+	background-color: rgba(0, 0, 0, .25)
+	padding: 30px 0
 
 .logo
-	max-width: 145px
+	display: flex
+	align-items: center
+	font-weight: 600
+	color: #fff
+
+	span
+		color: #ffc107
+
+.logo__ico
+	width: 42px
+	fill: #fff
+	margin-right: 12px
+
+.phone
+	text-decoration: none
+	color: #fff
+	font-weight: 600
+	margin-right: 30px
+
+.header__body
+	color: #fff
+	text-align: center
+	width: 1152px
+	margin: 0 auto
+	padding: 0 112px
+
+.header__stars
+	margin-bottom: 40px
+
+.around
+	justify-content: space-around
+
+.between
+	justify-content: space-between
 
 .container
 	margin: 0 auto
-	width: 1140px
-	padding-left: 15px
-	padding-right: 15px
+	// padding,width сделать переменной
+	width: 1152px
+	padding-left: 16px
+	padding-right: 16px
+
+.btn
+	border-radius: 3px
+	background-color: #ffc107
+	padding: 12px 25px 14px
+	cursor: pointer
+	border: none
+
+.row
+	display: flex

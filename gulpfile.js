@@ -2,12 +2,14 @@
 
 const { src, dest, watch, parallel }	= require('gulp');
 
-const del															= require('del');
-const pug															= require('gulp-pug');
-const sass														= require('gulp-sass');
-const svgMin													= require('gulp-svgmin');
-const rename													= require('gulp-rename');
-const browserSync											= require('browser-sync').create();
+const del														= require('del');
+const pug														= require('gulp-pug');
+const sass													= require('gulp-sass');
+const svgMin												= require('gulp-svgmin');
+const rename												= require('gulp-rename');
+const imgMin												= require('gulp-imagemin');
+const browserSync										= require('browser-sync').create();
+const imgCompress										= require('imagemin-jpeg-recompress');
 
 function cleaning() {
 	return del('build');
@@ -45,8 +47,21 @@ function js() {
     .pipe(dest('build/js'))
 }
 
+function img() {
+	return src(['dev/img/**/*.*', '!dev/img/**/*.svg'])
+		.pipe(imgMin([
+			imgCompress({
+				loops: 6,
+				min: 70,
+				max: 85,
+				quality: 'high'
+			})
+		]))
+		.pipe(dest('build/img'))
+}
+
 function svg() {
-	return src('dev/img/**/*.*')
+	return src('dev/img/**/*.svg')
 		.pipe(svgMin())
 		.pipe(dest('build/img'))
 }
@@ -59,11 +74,12 @@ function watching() {
 	watch(['build/*.html', 'build/**/*.js']).on('change', browserSync.reload);
 }
 
-exports.js 				= js;
-exports.css 			= css;
-exports.svg 			= svg;
-exports.html 			= html;
-exports.server 		= server;
-exports.watching 	= watching;
-exports.cleaning 	= cleaning;
-exports.default		= parallel(html, css, js, server, watching);
+exports.js 					= js;
+exports.css 				= css;
+exports.svg 				= svg;
+exports.img 				= img;
+exports.html 				= html;
+exports.server 			= server;
+exports.watching 		= watching;
+exports.cleaning 		= cleaning;
+exports.default			= parallel(html, css, js, img, svg, server, watching);
