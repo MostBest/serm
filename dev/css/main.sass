@@ -1,8 +1,3 @@
-// @import "utils/normalize"
-// @import "utils/libs"
-// @import "utils/vars"
-// @import "utils/mixins"
-// @import "utils/fonts"
 html
 	font-size: 16px
 	box-sizing: border-box
@@ -34,7 +29,7 @@ header
 	background: url('../img/header/header-bg.jpg') center no-repeat
 	height: 860px
 
-nav
+.navbar
 	display: flex
 	justify-content: space-around
 	background-color: rgba(0, 0, 0, .25)
@@ -70,6 +65,42 @@ nav
 .header__stars
 	margin-bottom: 40px
 
+.header__description
+	margin-bottom: 60px
+
+.header__achievement
+	display: flex
+	justify-content: space-around
+	// явная хрень, РАЗОБРАТЬСЯ!
+	padding-bottom: 105px
+
+	.wrapper
+		background: url('../img/header/header-achievement.png') center no-repeat
+		width: 100%
+		max-width: 192px
+		height: 124px
+		padding-top: 30px
+
+	.number
+		font-size: 2.25rem
+		line-height: 3rem
+		font-weight: 600
+
+	.percent
+		font-size: 1.5rem
+		line-height: 3rem
+		font-weight: 600
+
+	.description
+		margin-top: 50px
+
+.header__form
+	border-top: 2px dashed rgba(255, 255, 255, .5)
+	padding-top: 45px
+
+.input-group
+	padding-bottom: 30px
+
 .around
 	justify-content: space-around
 
@@ -86,9 +117,27 @@ nav
 .btn
 	border-radius: 3px
 	background-color: #ffc107
-	padding: 12px 25px 14px
 	cursor: pointer
 	border: none
+	font-size: .75rem
+	&_lg
+		padding: 12px 25px 14px
+	&_xl
+		font-weight: 600
+		padding: 18px 40px
+
 
 .row
 	display: flex
+
+.form__warning
+	font-size: .75rem
+
+.inp
+	border: 0
+	border-radius: 3px
+	padding: 18px 15px
+
+.t-text
+	// Разобраться с отступом
+	margin-right: 15px

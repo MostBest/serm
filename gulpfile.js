@@ -58,6 +58,7 @@ function img() {
 			})
 		]))
 		.pipe(dest('build/img'))
+		.pipe(browserSync.stream());
 }
 
 function svg() {
@@ -67,6 +68,7 @@ function svg() {
 }
 
 function watching() {
+	watch(['dev/img/**/*.*', '!dev/img/**/*.svg'], parallel(img));
 	watch(['dev/html/**/*.pug'], parallel(html));
 	watch(['dev/css/**/*.sass'], parallel(css));
 	watch(['dev/js/**/*.js'], parallel(js));
