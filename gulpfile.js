@@ -36,7 +36,7 @@ function html() {
 }
 
 function css() {
-	return src('dev/css/*.sass')
+	return src('dev/styles/*.sass')
 		.pipe(sass())
 		.pipe(dest('build/css'))
 		.pipe(browserSync.stream());
@@ -70,7 +70,7 @@ function svg() {
 function watching() {
 	watch(['dev/img/**/*.*', '!dev/img/**/*.svg'], parallel(img));
 	watch(['dev/html/**/*.pug'], parallel(html));
-	watch(['dev/css/**/*.sass'], parallel(css));
+	watch(['dev/styles/**/*.sass'], parallel(css));
 	watch(['dev/js/**/*.js'], parallel(js));
 
 	watch(['build/*.html', 'build/**/*.js']).on('change', browserSync.reload);

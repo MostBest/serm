@@ -1,0 +1,24 @@
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints)
+	// @debug 'result: #{$breakpoints}'
+	$min: breakpoint-min($name, $breakpoints)
+	@if $min
+		@media (min-width: $min)
+			@content
+	@else
+		@content
+
+@mixin make-container($gutter: $grid-gutter-width)
+	width: 100%
+	padding-right: $gutter / 2
+	padding-left: $gutter / 2
+	margin-right: auto
+	margin-left: auto
+
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints)
+	// $max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px)
+	// $breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
+	@each $breakpoint, $container-max-width in $max-widths
+		// $breakpoint: sm, md, lg, xl
+		// $container-max-width: 540px, 720px, 960px, 1140px
+		@include media-breakpoint-up($breakpoint, $breakpoints)
+			max-width: $container-max-width

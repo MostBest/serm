@@ -1,29 +1,35 @@
-html
-	font-size: 16px
+@import functions
+@import variables
+@import mixins
+
+*,
+*::before,
+*::after
 	box-sizing: border-box
+
+html
+	font-family: sans-serif
+	line-height: 1.15
 
 body
 	margin: 0
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Open Sans, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
+	font-family: $font-family-base
+	
+
+
+
+.container
+	@include make-container()
+	@include make-container-max-widths()
 
 *:focus
 	outline-style: none
 	outline-width: 0px !important
 	outline-color: none !important
 
-*,
-*::before,
-*::after
-	box-sizing: inherit
-
 h1
 	font-size: 3rem
 	font-weight: 600
-
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px )
-$container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px )
-$grid-columns: 12
-$grid-gutter-width: 30px
 
 header
 	background: url('../img/header/header-bg.jpg') center no-repeat
@@ -106,13 +112,6 @@ header
 
 .between
 	justify-content: space-between
-
-.container
-	margin: 0 auto
-	// padding,width сделать переменной
-	width: 1152px
-	padding-left: 16px
-	padding-right: 16px
 
 .btn
 	border-radius: 3px
