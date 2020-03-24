@@ -36,7 +36,7 @@ function html() {
 }
 
 function css() {
-	return src('dev/styles/*.sass')
+	return src('dev/styles/**/*.sass')
 		.pipe(sass())
 		.pipe(dest('build/css'))
 		.pipe(browserSync.stream());

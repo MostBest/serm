@@ -1,0 +1,63 @@
+header
+  padding-bottom: 60px
+  background: url('../img/header/header-bg.jpg') center no-repeat
+  background-size: cover
+
+.header__body
+	color: #fff
+
+.header__stars
+	margin-bottom: 40px
+
+.header__description
+	margin-bottom: 60px
+
+.header__achievement
+  display: none
+  flex-direction: column
+  padding-bottom: 60px
+
+  .achievement
+    display: flex
+    align-items: center
+
+    .achievement__header
+      display: flex
+      justify-content: center
+      padding-top: 30px
+      background: url('../img/header/header-achievement.png') center no-repeat
+      width: 136px !important
+      height: 124px
+
+      .number
+        font-size: 2.25rem
+        line-height: 3rem
+        font-weight: 600
+
+      .percent
+        font-size: 1.5rem
+        line-height: 3rem
+        font-weight: 600
+
+    .content
+      text-align: center
+
+@media(min-width: 768px)
+  .header__body
+    text-align: center
+
+  .header__achievement
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+
+    .achievement
+      flex-direction: column
+
+      .achievement__header
+        margin: 0 0 20px
+
+@media(min-width: 992px)
+
+	.header__wrapper
+		padding: 0 112px

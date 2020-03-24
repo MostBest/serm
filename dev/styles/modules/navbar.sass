@@ -1,0 +1,54 @@
+.navbar
+	display: flex
+  justify-content: space-around
+	background-color: rgba(0, 0, 0, .25)
+	padding-top: 1.875rem
+	padding-bottom: 1.875rem
+
+.navbar__wrapper
+	display: flex
+
+.navbar__logo
+	display: flex
+	align-items: center
+	font-weight: 600
+	color: #fff
+
+.logo__ico
+	width: 64px
+	fill: #fff
+	margin-right: 12px
+
+.logo__name
+	text-transform: uppercase
+	display: none
+	.yellow
+		color: #ffc107
+
+.navbar__calback-group
+  display: flex
+  flex-direction: column
+  align-items: flex-end
+
+.navbar__phone
+  color: #fff
+  text-decoration: none
+  font-weight: 600
+  margin-bottom: 10px
+
+// невыразительная кнопка «Заказать звонок»
+
+@media(min-width: 576px)
+  .logo__ico
+    width: 42px
+
+  .logo__name
+    display: inline
+
+  .navbar__calback-group
+    flex-direction: row
+    align-items: center
+
+  .navbar__phone
+    margin-bottom: 0
+    margin-right: 30px

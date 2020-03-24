@@ -1,6 +1,6 @@
-@import functions
-@import variables
-@import mixins
+@import foundation/functions
+@import foundation/variables
+@import foundation/mixins
 
 *,
 *::before,
@@ -12,11 +12,9 @@ html
 	line-height: 1.15
 
 body
+	background-color: #ccc
 	margin: 0
 	font-family: $font-family-base
-	
-
-
 
 .container
 	@include make-container()
@@ -31,116 +29,36 @@ h1
 	font-size: 3rem
 	font-weight: 600
 
-header
-	background: url('../img/header/header-bg.jpg') center no-repeat
-	height: 860px
-
-.navbar
-	display: flex
-	justify-content: space-around
-	background-color: rgba(0, 0, 0, .25)
-	padding: 30px 0
-
-.logo
-	display: flex
-	align-items: center
-	font-weight: 600
-	color: #fff
-
-	span
-		color: #ffc107
-
-.logo__ico
-	width: 42px
-	fill: #fff
-	margin-right: 12px
-
-.phone
-	text-decoration: none
-	color: #fff
-	font-weight: 600
-	margin-right: 30px
-
-.header__body
-	color: #fff
-	text-align: center
-	width: 1152px
-	margin: 0 auto
-	padding: 0 112px
-
-.header__stars
-	margin-bottom: 40px
-
-.header__description
-	margin-bottom: 60px
-
-.header__achievement
-	display: flex
-	justify-content: space-around
-	// явная хрень, РАЗОБРАТЬСЯ!
-	padding-bottom: 105px
-
-	.wrapper
-		background: url('../img/header/header-achievement.png') center no-repeat
-		width: 100%
-		max-width: 192px
-		height: 124px
-		padding-top: 30px
-
-	.number
-		font-size: 2.25rem
-		line-height: 3rem
-		font-weight: 600
-
-	.percent
-		font-size: 1.5rem
-		line-height: 3rem
-		font-weight: 600
-
-	.description
-		margin-top: 50px
-
-.header__form
-	border-top: 2px dashed rgba(255, 255, 255, .5)
-	padding-top: 45px
-
-.input-group
-	padding-bottom: 30px
-
 .around
 	justify-content: space-around
 
 .between
 	justify-content: space-between
 
-.btn
-	border-radius: 3px
-	background-color: #ffc107
-	cursor: pointer
-	border: none
-	font-size: .85rem
-	&_lg
-		padding: 12px 25px 14px
-	&_xl
-		font-weight: 600
-		padding: 18px 40px
+@import modules/header
+@import modules/navbar
 
+@import elements/buttons
 
-.row
-	display: flex
+.header__form
+  border-top: 2px dashed rgba(255, 255, 255, .5)
+  padding-top: 45px
+
+.input-group
+  padding-bottom: 30px
 
 .form__warning
-	font-size: .75rem
-	opacity: .5
+  font-size: .75rem
+  opacity: .5
 
 .inp
-	border: 0
-	border-radius: 3px
-	padding: 18px 15px
-	font-size: .85rem
+  border: 0
+  border-radius: 3px
+  padding: 18px 15px
+  font-size: .85rem
 
 .t-text
-	// Разобраться с отступом
-	margin-right: 15px
-	width: 100%
-	max-width: 200px
+  // Разобраться с отступом
+  margin-right: 15px
+  width: 100%
+  max-width: 200px
