@@ -10,11 +10,13 @@ btn.forEach(function(item) {
 	item.addEventListener('click', addElement);
 });
 
-function addElement(event) {
-	event.preventDefault();
-	let  elem = document.createElement('div');
-	elem.classList.add('pulse');
-	this.appendChild(elem);
+function addElement() {
 
-	l( elem );
+	if (this.childNodes.length == 1) {
+
+		let  elem = document.createElement('span');
+		elem.classList.add('animate');
+		this.appendChild(elem);
+
+	}
 }
