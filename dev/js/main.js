@@ -1,6 +1,6 @@
 'use strict';
 
-function l(param) {
+function l( param ) {
 	console.log( param );
 }
 
@@ -10,13 +10,23 @@ btn.forEach(function(item) {
 	item.addEventListener('click', addElement);
 });
 
-function addElement() {
+function addElement(e) {
 
-	if (this.childNodes.length == 1) {
+	let elem 		= this.getBoundingClientRect(); // не работает в IE9
+	let subElem = false;
 
-		let  elem = document.createElement('span');
-		elem.classList.add('animate');
-		this.appendChild(elem);
-
+	if( this.childNodes.length == 1 ) {
+		subElem = document.createElement('span');
+		subElem.classList.add('inc');
+		subElem.classList.remove('animate');
+		this.appendChild(subElem);
 	}
+
+	let x = e.pageX - elem.left - elem.width / 2;
+	let y = e.pageY - elem.top - elem.height / 2;
+
+	subElem.style.left = x + 'px';
+	subElem.style.top  = y + 'px';
+
+	subElem.classList.add('animate');
 }

@@ -17,14 +17,18 @@
     font-weight: 600
     padding: 18px 40px
 
-.animate
+.inc
+  display: block
+  position: absolute
   width: 100px
   height: 100px
   border-radius: 50%
-  background-color: orange
+  background-color: #fff
+  opacity: 1
   transform: scale(0)
+
+.animate
   animation: animate .7s ease-out
-  position: absolute
 
 @keyframes animate
   to
