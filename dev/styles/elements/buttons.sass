@@ -1,7 +1,4 @@
-*
-  outline: none !important
-  -webkit-tap-highlight-color: transparent
-
+// продумать уменьшение кнопки под разные разрешение
 .btn
   border-radius: 3px
   background-color: #ffc107
@@ -15,7 +12,9 @@
     padding: 12px 25px 14px
   &_xl
     font-weight: 600
-    padding: 18px 40px
+    padding: 18px 32px
+    width: 100%
+    max-width: 200px
 
 .inc
   display: block
@@ -28,10 +27,15 @@
   transform: scale(0)
 
 .animate
-  animation: animate .7s ease-out
+  animation: ripple .7s ease-out
 
-@keyframes animate
+@keyframes ripple
   to
     transform: scale(2)
     background-color: #fff
     opacity: 0
+
+@media(min-width: 992px)
+  .btn
+      &:hover
+        background-color: darken(#ffc107, 5%)

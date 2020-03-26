@@ -4,6 +4,7 @@ function l( param ) {
 	console.log( param );
 }
 
+
 let btn = document.querySelectorAll('.btn');
 
 btn.forEach(function(item) {
@@ -13,20 +14,15 @@ btn.forEach(function(item) {
 function addElement(e) {
 
 	let elem 		= this.getBoundingClientRect(); // не работает в IE9
-	let subElem = false;
+	let subElem = document.createElement('span');
+	subElem.classList.add('inc');
 
-	if( this.childNodes.length == 1 ) {
-		subElem = document.createElement('span');
-		subElem.classList.add('inc');
-		subElem.classList.remove('animate');
-		this.appendChild(subElem);
-	}
+	this.appendChild(subElem); // при каждом клике плодит сущность
 
 	let x = e.pageX - elem.left - elem.width / 2;
 	let y = e.pageY - elem.top - elem.height / 2;
 
 	subElem.style.left = x + 'px';
 	subElem.style.top  = y + 'px';
-
 	subElem.classList.add('animate');
 }
