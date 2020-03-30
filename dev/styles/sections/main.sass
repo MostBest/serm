@@ -1,23 +1,228 @@
 .w50
   display: flex
+  flex-direction: column
 
   .w50__left, .w50__right
     display: flex
-    width: 50%
-    padding: 95px 16px
+    padding: 95px 16px 70px
 
-  .w50__left
-    justify-content: flex-end
+    .wrapper
+      padding: 0
 
   .container
     margin: 0
     width: 100%
     max-width: 580px
 
-.about__left
-  background-color: #fff
+@media(min-width: 576px)
+  .w50
+    .w50__left, .w50__right
+      .wrapper
+        padding-left: 64px
 
-.about__left
+@media(min-width: 992px)
+  .w50
+    flex-direction: row
 
-  .description
-    padding-right: 64px
+    .w50__left, .w50__right
+      width: 50%
+
+      .wrapper
+        padding: 0
+
+    .w50__left
+      justify-content: flex-end
+
+@media(min-width: 1200px)
+  .w50
+    .w50__left
+      .wrapper
+        padding-right: 64px
+
+    .w50__right
+      .wrapper
+        padding-left: 64px
+
+// section about
+.about
+  .about__left
+    background-color: #fff
+    align-items: center
+
+// section whoelse
+.whoelse
+  background: url('../img/sections/whoelse/whoelse-background.jpg') center no-repeat
+  background-size: cover
+  color: #fff
+  padding-top: 55px
+  padding-bottom: 90px
+
+  .content
+    margin-bottom: 60px
+
+.howelse__statistics
+  display: none
+  flex-wrap: wrap
+
+.statistics__item
+  width: 100%
+  max-width: 190px
+  margin-right: 25px
+
+  .title
+    color: #ffc107
+    font-weight: 700
+
+  .number
+    font-size: 3rem
+
+  .percent
+    font-size: 2rem
+
+@media(min-width: 576px)
+  .howelse__statistics
+    display: flex
+
+// section audit
+.audit
+  .about__right
+    background-color: #fff
+
+  .audit__left
+    background-color: #ffc107
+
+    .list
+      margin-bottom: 30px
+
+    .num .number
+      color: #fff
+      background-color: #263238
+
+  .audit__title
+    display: flex
+    align-items: center
+    border-bottom: 2px solid rgba(31, 40, 65, .25)
+    margin-bottom: 10px
+
+    .title__icon
+      align-self: flex-end
+      width: 64px
+      height: 64px
+      background: #263238 url('../img/elements/title/checklist.png') center no-repeat
+      margin-right: 30px
+
+    .title__description
+      margin: 0
+
+  .audit__form
+
+    .input-group
+      justify-content: flex-start
+
+    .btn
+      background-color: #263238
+      color: #fff
+      &:hover
+        background-color: darken(#263238, 5%)
+
+// section warranty
+.warranty
+
+  .warranty__left
+    background-color: #fff
+    align-items: center
+
+  .warranty__list .list__row
+    display: flex
+    justify-content: space-between
+    &:first-child
+      margin-bottom: 140px
+
+    .list__wrapper
+      text-align: center
+
+      .list__description
+        font-weight: 700
+
+
+// section slider
+
+.slider
+  .slide-1
+    background: url('../img/sections/slider/slide-1.jpg') center no-repeat
+
+  .wrapper
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+
+  .arrow__wrapper
+    display: flex
+
+    .arrow.prev
+      background: #f5f5f5 url('../img/elements/slider/arrow-r.png') center no-repeat
+      transform: rotate(180deg)
+      margin-right: 60px
+
+      &:hover
+        background-color: darken(#f5f5f5, 5%)
+
+  .arrow
+    width: 48px
+    height: 48px
+    background: rgba(255, 255, 255, .1) url('../img/elements/slider/arrow-l.png') center no-repeat
+    cursor: pointer
+    &.prev
+      &:hover
+        background-color: rgba(255, 255, 255, .25)
+    &.next
+      background: #f5f5f5 url('../img/elements/slider/arrow-r.png') center no-repeat
+      &:hover
+        background-color: darken(#f5f5f5, 5%)
+
+  .slider__left
+    display: none
+    color: #fff
+    height: 644px
+
+    .title h2
+      margin: 0 0 5px
+
+
+  .slider__right
+    background-color: #fff
+
+    .slider__description
+      margin-bottom: 30px
+
+  .list
+    .item__title
+      font-weight: 700
+      margin-bottom: 5px
+
+    .item
+      display: flex
+      margin-bottom: 20px
+
+    .bonus
+      font-size: 2.25rem
+      font-weight: 700
+      color: #ffc107
+      margin-right: 20px
+
+    .percent
+      font-size: 1.5rem
+
+@media(min-width: 992px)
+  .slider
+    .slider__left
+      display: flex
+
+    .slider__right
+      .title
+        display: none
+
+      .arrow__wrapper
+        .arrow.prev
+          display: none
