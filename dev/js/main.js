@@ -4,25 +4,40 @@ function l( param ) {
 	console.log( param );
 }
 
+function random(number) {
+	return Math.ceil(Math.random() * number);
+}
 
-let btn = document.querySelectorAll('.btn');
+let number = random(10);
 
-btn.forEach(function(item) {
-	item.addEventListener('click', addElement);
+alert( number );
+
+let buttons = document.querySelectorAll('.btn'); // глобальная переменная
+
+buttons.forEach(function(button) {
+	button.addEventListener('click', addElement);
 });
+
 
 function addElement(e) {
 
-	let elem 		= this.getBoundingClientRect(); // не работает в IE9
-	let subElem = document.createElement('span');
-	subElem.classList.add('inc');
+	let buttonProperties 		= this.getBoundingClientRect(); // возращает размер элемента и его позицию
+	let buttonSize			 		= Math.max(this.clientWidth, this.clientHeight);
 
-	this.appendChild(subElem); // при каждом клике плодит сущность
+	// создали елемент, поместили в кнопку
+	let subElement = document.createElement('span');
+			subElement.classList.add('inc');
+			this.appendChild(subElement);
 
-	let x = e.pageX - elem.left - elem.width / 2;
-	let y = e.pageY - elem.top - elem.height / 2;
+	// увеличиваем размер дочернего элемента относительно родителя
+	subElement.style.width = buttonSize + 'px';
+	subElement.style.height = buttonSize + 'px';
 
-	subElem.style.left = x + 'px';
-	subElem.style.top  = y + 'px';
-	subElem.classList.add('animate');
+
+	let x = e.clientX - buttonProperties.left - buttonProperties.width / 2;
+	let y = e.clientY - buttonProperties.top - buttonProperties.height / 2;
+
+	subElement.style.left = x + 'px';
+	subElement.style.top  = y + 'px';
+
 }

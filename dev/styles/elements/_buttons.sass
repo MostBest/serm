@@ -1,0 +1,45 @@
+// продумать уменьшение кнопки под разные разрешение
+.btn
+  display: inline-block
+  font-weight: $btn-font-weight
+  color: $body-color
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  background-color: #ffc107
+  border: $border-width solid transparent
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius)
+  transition: $btn-transition
+  position: relative
+  overflow: hidden
+
+
+
+
+  // &_lg
+  //   padding: 12px 25px 14px
+  // &_xl
+  //   font-weight: 700
+  //   padding: 18px 32px
+  //   width: 100%
+  //   max-width: 200px
+
+.inc
+  display: block
+  position: absolute
+  border-radius: 50%
+  background-color: darken(#ffc107, 5%)
+  opacity: 1
+  transform: scale(0)
+  animation: ripple .7s ease-out
+
+@keyframes ripple
+  to
+    transform: scale(2)
+    background-color: #fff
+    opacity: 0
+
+@media(min-width: 992px)
+  .btn:hover
+
+    background-color: darken(#ffc107, 5%)
