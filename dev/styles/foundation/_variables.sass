@@ -7,6 +7,8 @@ $black:                      #000
 $body-bg:                    $white
 $body-color:                 $black
 
+$border-radius:              .1875rem
+
 // Default $container-max-widths: ( sm: 540px, md: 720px, lg: 960px, xl: 1140px )
 $grid-breakpoints:            ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px )
 $container-max-widths:        ( sm: 520px, md: 700px, lg: 940px, xl: 1120px )
@@ -34,6 +36,7 @@ $font-weight-normal:          400
 $font-weight-bold:            700
 $font-weight-bolder:          bolder
 
+$font-weight-base:             $font-weight-normal
 $line-height-base:            1.5
 
 $h1-font-size:                $font-size-base * 2.5
@@ -45,16 +48,44 @@ $h6-font-size:                $font-size-base
 
 // Buttons + Forms
 
+$input-btn-padding-y:         .6rem
+$input-btn-padding-x:         .75rem
+$input-btn-font-size:         $font-size-base
+$input-btn-line-height:       $line-height-base
+
+$input-btn-padding-y-lg:      1rem
+$input-btn-padding-x-lg:      2.375rem
+$input-btn-font-size-lg:      $font-size-base * .875
+$input-btn-line-height-lg:    $line-height-base
 
 // Buttons
 
 // у кнопки должно быть дефолтное значение, от которого вырастают все остальные
 // также эти значения должны быть объединины с полями в input-group, чтобы не отличатся от
 
-$btn-padding-y:               .6rem
+$btn-padding-y:               $input-btn-padding-y
 $btn-padding-x:               1.5rem
 $btn-font-size:               .875rem
 $btn-line-height:             1.5
-$btn-border-radius:           .1875rem
+$btn-border-radius:           $border-radius
 $btn-font-weight:             $font-weight-bold
 $btn-transition:              color .3s ease-in-out, background-color .3s ease-in-out
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg
+$btn-padding-x-lg:            $input-btn-padding-x-lg
+$btn-font-size-lg:            $font-size-base * .875
+$btn-line-height-lg:          $line-height-base
+
+// Forms
+
+$input-padding-y:             $input-btn-padding-y
+$input-padding-x:             $input-btn-padding-x / 2
+$input-font-size:             $input-btn-font-size
+$input-font-weight:           $font-weight-base
+$input-line-height:           $input-btn-line-height
+$input-border-radius:         $border-radius
+
+$input-padding-y-lg:          $input-btn-padding-y-lg
+$input-padding-x-lg:          $input-btn-padding-x-lg / 2
+$input-font-size-lg:          $input-btn-font-size-lg
+$input-line-height-lg:        $input-btn-line-height-lg

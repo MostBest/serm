@@ -10,7 +10,6 @@ function random(number) {
 
 let number = random(10);
 
-alert( number );
 
 let buttons = document.querySelectorAll('.btn'); // глобальная переменная
 

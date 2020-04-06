@@ -1,0 +1,54 @@
+// struct
+.input-group
+  display: flex
+  width: 100%
+  flex-direction: column
+  align-items: center
+  padding-bottom: 30px
+
+  .inp
+    width: 100%
+    max-width: 200px
+    font-weight: $input-font-weight
+    border: $border-width solid transparent
+    border-radius: $input-border-radius
+    padding: $input-btn-padding-y $input-btn-padding-x
+    margin-bottom: 20px
+
+  .btn
+    display: inline-block
+    font-weight: $btn-font-weight
+    color: $body-color
+    text-align: center
+    vertical-align: middle
+    cursor: pointer
+    background-color: #ffc107
+    border: $border-width solid transparent
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius)
+    transition: $btn-transition
+    position: relative
+    overflow: hidden
+
+  // lg — large
+  .btn-lg
+    padding: $btn-padding-y-lg $btn-padding-x-lg
+    font-size: $btn-font-size-lg
+    line-height: $btn-line-height-lg
+
+  .inp-lg
+    padding: $input-padding-y-lg $input-padding-x-lg
+    font-size: $input-font-size-lg
+    line-height: $input-line-height-lg
+
+.form__warning
+  font-size: .75rem
+  opacity: .5
+
+@media(min-width: 576px)
+  .input-group
+    flex-direction: row
+    justify-content: center
+
+    .inp
+      margin-bottom: 0
+      margin-right: 15px
