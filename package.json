@@ -37,7 +37,7 @@
     "gulp-uglify": "^3.0.2",
     "imagemin-jpeg-recompress": "^6.0.0",
     "npm-check-updates": "^4.0.4",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   },
   "optionalDependencies": {}
 }
